@@ -73,11 +73,12 @@ Thumbs.db
 # ========================
 *.pem
 *.key
-credentials
+.aws/credentials
 
 # ========================
 # Archives / binaries
 # ========================
 *.zip
+!workshop-ui-package.zip
 *.tar.gz
 *.tgz
