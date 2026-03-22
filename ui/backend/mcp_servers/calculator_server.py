@@ -41,6 +41,25 @@ def factorial(n: int) -> int:
         raise ValueError("Factorial too large to calculate")
     return math.factorial(n)
 
+# Global context storage (in production, use
+# proper session management)
+calculation_history = []
+
+@mcp.tool(description="Add two numbers and remember the result")
+def add_with_memory(x: float, y: float) -> dict:
+    """Add two numbers and store in calculation history."""
+    result = x + y
+    calculation_history.append({
+        "operation": "add",
+        "operands": [x, y],
+        "result": result
+    })
+    
+    return {
+        "result": result,
+        "history_count": len(calculation_history)
+    }
+
 
 if __name__ == "__main__":
     print("🔢 Starting Calculator MCP Server...")
