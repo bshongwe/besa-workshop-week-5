@@ -8,3 +8,8 @@ mcp==1.13.1
 strands-agents==1.8.0
 strands-agents-tools==0.2.7
 httpx==0.28.1
+# Financial Markets MCP Server dependencies
+yfinance>=0.2.38
+pandas>=2.0.0
+numpy>=1.26.0
+scipy>=1.12.0
