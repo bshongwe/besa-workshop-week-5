@@ -1,0 +1,45 @@
+{
+  "mcpServers": {
+    "calculator": {
+      "command": "python3",
+      "args": [
+        "mcp_servers/calculator_server.py"
+      ],
+      "enabled": true
+    },
+    "weather": {
+      "command": "python3",
+      "args": [
+        "mcp_servers/weather/weather_server.py"
+      ],
+      "enabled": true
+    },
+    "calendar": {
+      "command": "python3",
+      "args": [
+        "mcp_servers/calendar/calendar_server.py"
+      ],
+      "enabled": true
+    },
+    "my_custom_server": {
+      "command": "python3",
+      "args": [
+        "mcp_servers/custom/my_custom_server.py"
+      ],
+      "enabled": false
+    },
+    "my_strands_agent": {
+      "command": "python3",
+      "args": [
+        "mcp_servers/strands/strands_agent.py"
+      ],
+      "enabled": false
+    },
+    "text_utils_remote": {
+      "type": "http",
+      "url": "",
+      "enabled": false,
+      "description": "Text Utilities on AgentCore Runtime"
+    }
+  }
+}
