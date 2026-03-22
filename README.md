@@ -46,6 +46,22 @@ This package contains the pre-built UI components for the "Everyday Productivity
 - Node.js 18+
 - AWS credentials configured for Bedrock access
 
+## AWS Services Used
+
+This workshop makes use of the following AWS services:
+
+| Service | Purpose |
+|---|---|
+| **Amazon Bedrock** | AI model inference (Nova Pro, Claude Sonnet) |
+| **Amazon Bedrock AgentCore** | Managed runtime for deploying and hosting MCP servers as scalable agents |
+| **Strands Agents** | Open-source AWS agent framework used to build AI agents backed by Bedrock models |
+| **Amazon CloudWatch** | Observability and logging via AWS OpenTelemetry instrumentation |
+| **Amazon ECR** | Elastic Container Registry — stores Docker images for AgentCore deployments |
+| **AWS CodeBuild** | Builds and packages container images for deployment |
+| **Amazon S3** | Object storage used for workshop artifacts and package distribution |
+| **AWS IAM** | Identity and Access Management — SigV4 authentication for secure MCP server access |
+| **AWS Systems Manager (SSM) Parameter Store** | Stores and retrieves configuration values such as AgentCore runtime ARNs |
+
 ## Support
 
 If you encounter issues during the workshop, please ask your instructor for assistance.
