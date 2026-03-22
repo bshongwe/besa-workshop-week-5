@@ -37,8 +37,8 @@
     },
     "text_utils_remote": {
       "type": "http",
-      "url": "",
-      "enabled": false,
+      "url": "https://bedrock-agentcore.us-west-2.amazonaws.com/runtimes/arn%3Aaws%3Abedrock-agentcore%3Aus-west-2%3A554351002047%3Aruntime%2Ftext_utils_mcp-AEjBA2A0Dm/invocations?qualifier=DEFAULT",
+      "enabled": true,
       "description": "Text Utilities on AgentCore Runtime"
     },
     "financial_markets": {
@@ -47,7 +47,7 @@
         "mcp_servers/financial/financial_markets_server.py"
       ],
       "enabled": true,
-      "description": "Financial Markets MCP Server – stock quotes, portfolio analytics, options pricing, bond metrics, FX rates, technical indicators, and risk analytics for use by major financial institutions."
+      "description": "Financial Markets MCP Server \u2013 stock quotes, portfolio analytics, options pricing, bond metrics, FX rates, technical indicators, and risk analytics for use by major financial institutions."
     }
   }
 }
