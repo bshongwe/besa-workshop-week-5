@@ -1,5 +1,10 @@
 from mcp.server import FastMCP
 import math
+import logging
+
+# For debugging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Create a new MCP server
 mcp = FastMCP("Calculator Server")
@@ -7,7 +12,10 @@ mcp = FastMCP("Calculator Server")
 @mcp.tool(description="Add two numbers together")
 def add(x: float, y: float) -> float:
     """Add two numbers and return the result."""
-    return x + y
+    logger.info(f"Adding {x} + {y}")
+    result = x + y
+    logger.info(f"Result: {result}")
+    return result
 
 @mcp.tool(description="Subtract second number from first number")
 def subtract(x: float, y: float) -> float:
@@ -26,7 +34,6 @@ def divide(x: float, y: float) -> float:
         raise ValueError("Cannot divide by zero")
     return x / y
 
-# Additional math functions (hence, Math lib import)
 @mcp.tool(description="Calculate power of a number")
 def power(base: float, exponent: float) -> float:
     """Calculate base raised to the power of exponent."""
@@ -41,8 +48,8 @@ def factorial(n: int) -> int:
         raise ValueError("Factorial too large to calculate")
     return math.factorial(n)
 
-# Global context storage (in production, use
-# proper session management)
+# Global context storage (in production, use proper
+# session management)
 calculation_history = []
 
 @mcp.tool(description="Add two numbers and remember the result")
@@ -54,13 +61,11 @@ def add_with_memory(x: float, y: float) -> dict:
         "operands": [x, y],
         "result": result
     })
-    
     return {
         "result": result,
         "history_count": len(calculation_history)
     }
 
-
 if __name__ == "__main__":
     print("🔢 Starting Calculator MCP Server...")
-    mcp.run(transport="stdio") 
+    mcp.run(transport="stdio")
