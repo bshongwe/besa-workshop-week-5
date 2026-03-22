@@ -78,7 +78,7 @@ Thumbs.db
 # ========================
 # Archives / binaries
 # ========================
-# *.zip
+*.zip
 !workshop-ui-package.zip
 *.tar.gz
 *.tgz
