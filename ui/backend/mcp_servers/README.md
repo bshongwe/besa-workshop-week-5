@@ -13,8 +13,10 @@ mcp_servers/
 ├── task_manager_client.py       # Task manager client example
 ├── calendar/
 │   └── calendar_server.py       # Calendar integration MCP server
-└── weather/
-    └── weather_server.py        # Weather forecasting MCP server
+├── weather/
+│   └── weather_server.py        # Weather forecasting MCP server
+└── financial/
+    └── financial_markets_server.py  # Financial Markets MCP server (banks)
 ```
 
 ## Quick Start
@@ -62,6 +64,37 @@ python mcp_servers/calendar/calendar_server.py
 cd ui/backend
 python mcp_servers/weather/weather_server.py
 ```
+
+### 5. Financial Markets Server
+
+Production-grade MCP server for use by major financial institutions (JPMorgan Chase,
+Investec Bank, Bank of America, Goldman Sachs, etc.).
+
+**Prerequisites:**
+```bash
+pip install yfinance pandas numpy scipy
+```
+
+**Terminal 1 - Start the Financial Markets Server:**
+```bash
+cd ui/backend
+python mcp_servers/financial/financial_markets_server.py
+```
+
+**Available tools:**
+
+| Tool | Description |
+|------|-------------|
+| `get_stock_quote` | Real-time price + key fundamentals for any ticker |
+| `get_historical_prices` | OHLCV history with configurable period & interval |
+| `calculate_portfolio_metrics` | Weighted portfolio returns, Sharpe, Sortino, VaR, max drawdown |
+| `calculate_options_price` | Black-Scholes call/put pricing + full Greeks (Δ, Γ, Θ, ν, ρ) |
+| `calculate_bond_metrics` | Bond price, YTM, Macaulay/modified duration, convexity, DV01 |
+| `get_fx_rates` | Live FX rates and cross-currency conversion for any pair |
+| `get_market_indices` | Snapshot of major equity indices, US Treasury yields, commodities |
+| `calculate_technical_indicators` | SMA, EMA, RSI, MACD, Bollinger Bands, ATR, OBV |
+| `screen_stocks` | Filter a watchlist by market cap, P/E, dividend yield, beta |
+| `calculate_risk_metrics` | Beta, alpha, information ratio, CVaR, Calmar ratio, tracking error |
 
 ## Server Ports
 
