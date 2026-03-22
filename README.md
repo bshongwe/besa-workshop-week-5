@@ -58,7 +58,7 @@ This workshop makes use of the following AWS services:
 | **Amazon CloudWatch** | Observability and logging via AWS OpenTelemetry instrumentation |
 | **Amazon ECR** | Elastic Container Registry — stores Docker images for AgentCore deployments |
 | **AWS CodeBuild** | Builds and packages container images for deployment |
-| **Amazon S3** | Object storage used for workshop artefacts and package distribution |
+| **Amazon S3** | Object storage used for workshop artifacts and package distribution |
 | **AWS IAM** | Identity and Access Management — SigV4 authentication for secure MCP server access |
 | **AWS Systems Manager (SSM) Parameter Store** | Stores and retrieves configuration values such as AgentCore runtime ARNs |
 
