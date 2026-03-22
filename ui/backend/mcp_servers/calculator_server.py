@@ -1,4 +1,5 @@
 from mcp.server import FastMCP
+import math
 
 # Create a new MCP server
 mcp = FastMCP("Calculator Server")
@@ -24,6 +25,22 @@ def divide(x: float, y: float) -> float:
     if y == 0:
         raise ValueError("Cannot divide by zero")
     return x / y
+
+# Additional math functions (hence, Math lib import)
+@mcp.tool(description="Calculate power of a number")
+def power(base: float, exponent: float) -> float:
+    """Calculate base raised to the power of exponent."""
+    return base ** exponent
+
+@mcp.tool(description="Calculate factorial of a number")
+def factorial(n: int) -> int:
+    """Calculate factorial of a positive integer."""
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    if n > 20:
+        raise ValueError("Factorial too large to calculate")
+    return math.factorial(n)
+
 
 if __name__ == "__main__":
     print("🔢 Starting Calculator MCP Server...")
